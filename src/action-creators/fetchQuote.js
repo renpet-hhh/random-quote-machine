@@ -24,7 +24,7 @@ const fetchQuote = () => (dispatch, getState) => {
                 didFetchQuote(data[0].quote, data[0].character)));                
 
         case 'design':
-            return fetch("http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1", { cache: 'no-cache' }
+            return fetch("https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1", { cache: 'no-cache' }
             ).then(response => response.json()
             ).then(data => dispatch(
                 didFetchQuote(/(?<=<p>).+(?=<[/]p>)/.exec(data[0].content)
