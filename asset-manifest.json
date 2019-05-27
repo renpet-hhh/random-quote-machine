@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/random-quote-machine/static/css/main.f67a71a3.chunk.css",
-    "main.js": "/random-quote-machine/static/js/main.fe70a136.chunk.js",
-    "main.js.map": "/random-quote-machine/static/js/main.fe70a136.chunk.js.map",
-    "runtime~main.js": "/random-quote-machine/static/js/runtime~main.296aa1cf.js",
-    "runtime~main.js.map": "/random-quote-machine/static/js/runtime~main.296aa1cf.js.map",
-    "static/js/2.1f44fb12.chunk.js": "/random-quote-machine/static/js/2.1f44fb12.chunk.js",
-    "static/js/2.1f44fb12.chunk.js.map": "/random-quote-machine/static/js/2.1f44fb12.chunk.js.map",
-    "index.html": "/random-quote-machine/index.html",
-    "precache-manifest.ee3489c726e5913204798eeaaacf4a58.js": "/random-quote-machine/precache-manifest.ee3489c726e5913204798eeaaacf4a58.js",
-    "service-worker.js": "/random-quote-machine/service-worker.js",
-    "static/css/main.f67a71a3.chunk.css.map": "/random-quote-machine/static/css/main.f67a71a3.chunk.css.map"
+    "main.css": "/random-quote-machinenpm%20run/static/css/main.f67a71a3.chunk.css",
+    "main.js": "/random-quote-machinenpm%20run/static/js/main.6f215454.chunk.js",
+    "main.js.map": "/random-quote-machinenpm%20run/static/js/main.6f215454.chunk.js.map",
+    "runtime~main.js": "/random-quote-machinenpm%20run/static/js/runtime~main.fd988d55.js",
+    "runtime~main.js.map": "/random-quote-machinenpm%20run/static/js/runtime~main.fd988d55.js.map",
+    "static/js/2.1f44fb12.chunk.js": "/random-quote-machinenpm%20run/static/js/2.1f44fb12.chunk.js",
+    "static/js/2.1f44fb12.chunk.js.map": "/random-quote-machinenpm%20run/static/js/2.1f44fb12.chunk.js.map",
+    "index.html": "/random-quote-machinenpm%20run/index.html",
+    "precache-manifest.56ffbea17e0cc3fcfa27416d36dd1294.js": "/random-quote-machinenpm%20run/precache-manifest.56ffbea17e0cc3fcfa27416d36dd1294.js",
+    "service-worker.js": "/random-quote-machinenpm%20run/service-worker.js",
+    "static/css/main.f67a71a3.chunk.css.map": "/random-quote-machinenpm%20run/static/css/main.f67a71a3.chunk.css.map"
   }
 }
