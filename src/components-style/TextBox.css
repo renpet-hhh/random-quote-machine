@@ -1,0 +1,36 @@
+#text-box {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    transition: opacity 600ms, background-color 2s, color 2s;
+    /* time must be sync to setTimeout(() => this.setState({opacity: 1}), 600); 
+    in QuoteBox.js delaying() function */
+}
+#text {
+    text-align: justify;
+    margin: 1.5rem 1.5rem 0.2rem 1.5rem;
+    align-self: center;
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+#quotation {
+    font-size: 8rem;
+    position: relative;
+    bottom: -2.5rem;
+}
+#author {
+    align-self: flex-end;
+    margin-right: 2rem;
+    font-size: 1.2rem;
+}
+@media (max-width: 40rem) {
+    #quotation {
+        font-size: 6rem;
+    }
+    #text {
+        font-size: 1rem;
+    }
+    #author {
+        font-size: 0.8rem;
+    }
+}

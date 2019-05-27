@@ -1,0 +1,25 @@
+#quote-box {
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    width: 50vw;
+    margin: 3rem 0;
+    padding-bottom: 1.5rem;
+    transition: background-color 2s;
+}
+#twitter_plus_new_quote_button {
+    position: relative;
+    flex-direction: row;
+    color: whitesmoke;
+}
+
+@media (max-width: 60rem) {
+    #quote-box {
+        width: 75vw;
+    }
+}
+@media (max-width: 40rem) {
+    #quote-box {
+        width: 90vw;
+    }
+}
