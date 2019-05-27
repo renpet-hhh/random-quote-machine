@@ -2,7 +2,7 @@
     align-self: center;
     display: flex;
     flex-direction: column;
-    transition: opacity 600ms, background-color 2s, color 2s;
+    transition: opacity 400ms, background-color 2s, color 2s;
     /* time must be sync to setTimeout(() => this.setState({opacity: 1}), 600); 
     in QuoteBox.js delaying() function */
 }

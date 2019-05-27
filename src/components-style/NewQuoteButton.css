@@ -1,11 +1,7 @@
 #new-quote {
-    position: absolute;
     font-size: 1.5rem;
     border: none;
     border-radius: 0.3rem;
-    right: 2rem;
-    top: 0.5rem;
-    bottom: 0.5rem;
     transition: background-color 2s;
     color: inherit;
 }

@@ -13,7 +13,7 @@ class NewQuoteButton extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    mainColor: state.mainColor
+    mainColor: state.fetch.mainColor
 });
 
 const mapDispatchToProps = dispatch => ({

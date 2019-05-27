@@ -3,16 +3,24 @@
     flex-direction: column;
     background-color: whitesmoke;
     width: 50vw;
-    margin: 3rem 0;
+    margin-top: 3rem;
     padding-bottom: 1.5rem;
     transition: background-color 2s;
 }
-#twitter_plus_new_quote_button {
+#bottom-of-quotebox-container {
+    display: flex;
+    align-items: center;
     position: relative;
-    flex-direction: row;
     color: whitesmoke;
 }
-
+#new-quote-container {
+    position: absolute;
+    right: 2rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    display: flex;
+    flex-direction: row;
+}
 @media (max-width: 60rem) {
     #quote-box {
         width: 75vw;

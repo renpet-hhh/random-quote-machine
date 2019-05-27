@@ -20,3 +20,11 @@ header {
     font-size: 2rem;
   }
 }
+#searching-for {
+  padding-top: 0.5rem;
+  color: whitesmoke;
+}
+#dropdown {
+  margin-top: 1rem;
+}
+
