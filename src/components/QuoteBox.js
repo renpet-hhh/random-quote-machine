@@ -6,6 +6,13 @@ import NewQuoteButton from './NewQuoteButton';
 import { connect } from 'react-redux';
 import fetchQuote from '../action-creators/fetchQuote';
 
+// MDN https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent
+function fixedEncodeURIComponent (str) {
+    return encodeURIComponent(str).replace(/[!'()*]/g, function(c) {
+      return '%' + c.charCodeAt(0).toString(16);
+    });
+  }
+
 class QuoteBox extends Component {
 
     componentDidMount() {
@@ -22,7 +29,7 @@ class QuoteBox extends Component {
                 <div id="bottom-of-quotebox-container">
                     <TwitterButton backgroundColor={this.props.mainColor}
                         href={`https://twitter.com/intent/tweet/?text="` +
-                        encodeURIComponent(this.props.quoteText) + `" - ` + encodeURIComponent(this.props.quoteAuthor)}/>
+                        fixedEncodeURIComponent(this.props.quoteText) + `" - ` + fixedEncodeURIComponent(this.props.quoteAuthor)}/>
                     <div id="new-quote-container">
                         <NewQuoteButton />
                     </div>
