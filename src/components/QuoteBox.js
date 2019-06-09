@@ -20,7 +20,9 @@ class QuoteBox extends Component {
                 color={this.props.mainColor}
                 opacity={this.props.opacity}/>
                 <div id="bottom-of-quotebox-container">
-                    <TwitterButton backgroundColor={this.props.mainColor} />
+                    <TwitterButton backgroundColor={this.props.mainColor}
+                        href={`https://twitter.com/intent/tweet/?text="` +
+                        encodeURIComponent(this.props.quoteText) + `" - ` + encodeURIComponent(this.props.quoteAuthor)}/>
                     <div id="new-quote-container">
                         <NewQuoteButton />
                     </div>
