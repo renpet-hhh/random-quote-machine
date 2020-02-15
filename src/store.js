@@ -7,10 +7,11 @@ import { getRandomColor } from "./functionsForReducers";
 const initialState = {
 
     fetch: {
-    mainColor: getRandomColor(),
-    isFetchingQuote: false, quoteTextOpacity: 1, // quoteTextOpacity indicates if QuoteBox must fade out/in
-    quoteText: "", quoteAuthor: "",
-    quoteFilter: "all"}
+        mainColor: getRandomColor(),
+        isFetchingQuote: false, quoteTextOpacity: 1, // quoteTextOpacity indicates if QuoteBox must fade out/in
+        quoteText: "", quoteAuthor: "",
+        quoteFilter: "all"
+    }
 
 };
 

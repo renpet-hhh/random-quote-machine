@@ -2,8 +2,10 @@ import { didFetchQuote } from "./didFetchQuote";
 import { startedFetchingQuote } from "./startedFetchingQuote";
 
 
+// dispatch(fetchQuote()) dispatches a function with arguments (dispatch, getState) provided by the middleware,
+// that enables updating the store asyncronously
+const fetchQuote = () => async (dispatch, getState) => {
 
-const fetchQuote = () => (dispatch, getState) => {
     if (getState().isFetchingQuote) {
         console.log("already fetching!!!");
         return Promise.reject("Already fetching");
@@ -12,29 +14,31 @@ const fetchQuote = () => (dispatch, getState) => {
     dispatch(startedFetchingQuote());
     let allTags = ["Simpsons", "design"]
     let filterFromState = getState().fetch.quoteFilter;
-    let quoteFilter = filterFromState === 'all' ? 
-        allTags[Math.floor(Math.random()*allTags.length)] : filterFromState;
+    let quoteFilter = filterFromState === 'all' ?
+        allTags[Math.floor(Math.random() * allTags.length)] : filterFromState;
     console.log(filterFromState);
     console.log(quoteFilter);
     switch (quoteFilter) {
         case 'Simpsons':
-            return fetch("https://thesimpsonsquoteapi.glitch.me/quotes"
+            fetch("https://thesimpsonsquoteapi.glitch.me/quotes"
             ).then(response => response.json()
             ).then(data => dispatch(
-                didFetchQuote(data[0].quote, data[0].character)));                
-
+                didFetchQuote(data[0].quote, data[0].character)));
+            break;
         case 'design':
-            return fetch("https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1", { cache: 'no-cache' }
+            const designQuotes = await fetch("https://quotesondesign.com/wp-json/wp/v2/posts/?orderby=rand", { cache: 'no-store' }
             ).then(response => response.json()
-            ).then(data => dispatch(
-                didFetchQuote(/(?<=<p>).+(?=<[/]p>)/.exec(data[0].content)
+            ); // the API isn't sending random responses...
+            const quote = designQuotes[Math.floor(Math.random() * designQuotes.length)];
+            dispatch(
+                didFetchQuote(/(?<=<p>).+(?=<[/]p>)/.exec(quote.content.rendered)
                     // removing <p> and </p> from content, content has HTML code, like &lt;
-                    , data[0].title)));
-        
+                    , quote.title.rendered))
+            break;
         default:
-            didFetchQuote("You are bugging the quote machine :(", "A sad dev");
+            didFetchQuote("The quote machine bugged :(", "A sad dev");
     }
-    
+
 };
 
 export default fetchQuote;
