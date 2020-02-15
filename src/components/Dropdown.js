@@ -33,16 +33,20 @@ class Dropdown extends Component {
     
     render() {
         return (
-            <select onChange={this.dispatchSelectedOption}>
+            <select value={this.props.quoteFilter} onChange={this.dispatchSelectedOption}>
                 {this.state.optionsJSX}
             </select>
         );
     }
 }
 
+const mapStateToProps = ({fetch}) => ({
+    quoteFilter: fetch.quoteFilter
+});
+
 const mapDispatchToProps = dispatch => ({
     filterQuotes: (optionValue) => dispatch(filterQuotes(optionValue))
 });
 
 
-export default connect(null, mapDispatchToProps)(Dropdown);
+export default connect(mapStateToProps, mapDispatchToProps)(Dropdown);

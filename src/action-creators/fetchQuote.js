@@ -1,6 +1,11 @@
 import { didFetchQuote } from "./didFetchQuote";
 import { startedFetchingQuote } from "./startedFetchingQuote";
 
+const quotesFromFCC = fetch("https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json"
+).then(response => response.json()
+);
+
+
 
 // dispatch(fetchQuote()) dispatches a function with arguments (dispatch, getState) provided by the middleware,
 // that enables updating the store asyncronously
@@ -12,7 +17,7 @@ const fetchQuote = () => async (dispatch, getState) => {
     }
     console.log("started fetching...");
     dispatch(startedFetchingQuote());
-    let allTags = ["Simpsons", "design"]
+    let allTags = ["Simpsons", "design", "default"]
     let filterFromState = getState().fetch.quoteFilter;
     let quoteFilter = filterFromState === 'all' ?
         allTags[Math.floor(Math.random() * allTags.length)] : filterFromState;
@@ -36,7 +41,9 @@ const fetchQuote = () => async (dispatch, getState) => {
                     , quote.title.rendered))
             break;
         default:
-            didFetchQuote("The quote machine bugged :(", "A sad dev");
+            const quotesArr = (await quotesFromFCC).quotes;
+            const quoteObj = quotesArr[Math.floor(Math.random() * quotesArr.length)];
+            dispatch(didFetchQuote(quoteObj.quote, quoteObj.author));
     }
 
 };
